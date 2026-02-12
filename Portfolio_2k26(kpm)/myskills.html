@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="nav_content">
+            <div class="logo">
+    <a href="index.html">
+        <img src="images/logo.png" alt="Logo">
+    </a>
+</div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+
+            <ul>
+    <li><a href="index.html" class="nav-link">Home</a></li>
+    <li><a href="about.html" class="nav-link">About</a></li>
+    <li><a href="myskills.html" class="nav-link">My Skills</a></li>
+    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+    <li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+
+        </div>
+    </nav>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>My Skills</h1>
+
+    <div class="card skill">
+      <p>HTML & CSS</p>
+      <div class="progress"><span style="width:90%"></span></div>
+    </div>
+
+    <div class="card skill">
+      <p>JavaScript</p>
+      <div class="progress"><span style="width:75%"></span></div>
+    </div>
+
+    <div class="card skill">
+      <p>C# / ASP.NET</p>
+      <div class="progress"><span style="width:70%"></span></div>
+    </div>
+  </div>
+</section>
+<section>
+        <div class="footer-container">&copy;code by Karabo 2026
+
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+        function toggleMenu() {
+    document.querySelector("nav ul").classList.toggle("show");
+}
+
+const links = document.querySelectorAll(".nav-link");
+const currentPage = location.pathname.split("/").pop();
+
+links.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+    }
+});
+</script>
+
+</body>
+
+</html>
